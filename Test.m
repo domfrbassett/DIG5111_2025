@@ -5,3 +5,4 @@ theta = 0; % Phase offset in radians
 A = 0.5;
 sig = DomsSineWave(A, freq,Fs, dur, theta);
 sound(sig, Fs);
+abcde
