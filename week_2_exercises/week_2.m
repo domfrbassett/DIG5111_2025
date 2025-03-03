@@ -85,3 +85,45 @@ plot(t_rms, norm_rms_sig);
 title('Normalised Signal (0.5*RMS)');
 xlabel('Time (s)');
 ylabel('Amplitude');
+
+% Task 8 - Create a table that shows the decimal, binary and hexadecimal values 
+% for the decimal numbers 1 through to 30. 
+
+% Define the decimal numbers from 1 to 30
+decimalNumbers = (1:30)';
+
+% Convert decimal to binary and hexadecimal
+binaryValues = arrayfun(@dec2bin, decimalNumbers, 'UniformOutput', false);
+hexValues = arrayfun(@dec2hex, decimalNumbers, 'UniformOutput', false);
+
+% Create table
+T = table(decimalNumbers, binaryValues, hexValues, ...
+    'VariableNames', {'Decimal', 'Binary', 'Hexadecimal'});
+
+% Display table
+disp(T);
+
+% Reverse the signal manually using indexing
+reversed_Sig = Sig(end:-1:1);
+
+% Play the reversed audio
+
+% Plot the original and reversed signals
+time_original = (0:length(Sig)-1) / fs;
+time_reversed = (0:length(reversed_Sig)-1) / fs;
+
+figure;
+subplot(2,1,1);
+plot(time_original, Sig);
+title('Original Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+
+subplot(2,1,2);
+plot(time_reversed, reversed_Sig);
+title('Reversed Signal');
+xlabel('Time (s)');
+ylabel('Amplitude');
+
+% Save the reversed audio as a new file
+audiowrite("piano_middle_C_reversed.wav", double(reversed_Sig), fs);
