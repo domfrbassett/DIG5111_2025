@@ -17,10 +17,14 @@ Sil=note(0,40,0.2);
 C5long=note(1,52,0.4);
 F3=note(1,33,0.2);
 C3=note(1,28,0.2);
+G3=note(1,35,0.2);
+F5=note(1,57,0.6);
+C5=note(1,52,0.2);
 
-Melody = horzcat(C5,B4,C5,A4,Ab4,A4,F4,E4,F4,C4,Sil,Sil,A3,ASh3,C4,D4,E4,F4,G4,A4,ASh4,G4,Sil,Sil,ASh4,A4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4,Sil,Sil,C5long,B4,C5,A4,Ab4,A4,F4,E4,F4,C4,Sil,Sil,A3,ASh3,C4,D4,E4,F4,G4,A4,ASh4,G4,Sil,Sil,ASh4,A4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4);
-Bass = horzcat(Sil,Sil,F3,C4,C4,C3,C4,C4,F3,C4,C4,C3,C4,C4,C4,D4,E4,F4,G4,A4,ASh4,G4,Sil,Sil,ASh4,A4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4,Sil,Sil,C5long,B4,C5,A4,Ab4,A4,F4,E4,F4,C4,Sil,Sil,A3,ASh3,C4,D4,E4,F4,G4,A4,ASh4,G4,Sil,Sil,ASh4,A4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4);
+Melody = horzcat(C5,B4,C5,A4,Ab4,A4,F4,E4,F4,C4,Sil,Sil,A3,ASh3,C4,D4,E4,F4,G4,A4,ASh4,G4,Sil,Sil,ASh4,A4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4,Sil,Sil,C5long,B4,C5,A4,Ab4,A4,F4,E4,F4,C4,Sil,Sil,A3,ASh3,C4,D4,E4,F4,G4,A4,ASh4,G4,Sil,Sil,ASh4,A4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4,A4,C5,F5);
+Bass = horzcat(Sil,Sil,F3,C4,C4,C3,C4,C4,F3,C4,C4,C3,C4,C4,F3,C4,C4,C3,C4,C4,G3,C4,C4,C3,C4,C4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4,Sil,Sil,C5long,B4,C5,A4,Ab4,A4,F4,E4,F4,C4,Sil,Sil,A3,ASh3,C4,D4,E4,F4,G4,A4,ASh4,G4,Sil,Sil,ASh4,A4,ASh4,G4,FSh4,G4,E4,DSh4,E4,C4,Sil,Sil,C5,C5,C5,D5,C5,ASh4,A4,G4,F4,A4,C5,F5);
 
 Song = Melody+Bass;
 SongOutput = Song/max(abs(Song));
-audiowrite("crap.wav", SongOutput, fs);
+audiowrite("crap.wav", SongOutput, 16085);
+sound(SongOutput);
